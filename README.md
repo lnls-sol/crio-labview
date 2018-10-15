@@ -26,6 +26,6 @@ ni package RT IPC has to be installed (Tested with version 1.5.1.19).
  - sm read and increment.vi
  - sm write and increment.vi
  
- The sm read and write blocks are chained, and their order in the chained
+ The shared memory read and write blocks are chained, and their order in the chained
  represents the index that will be passed to the crio-linuc-lib using the 
  *.ini file.
