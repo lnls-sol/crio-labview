@@ -18,6 +18,8 @@ be referenced in the *.ini file and the IOC to facilitate debugging.
 
 ## Communicating with LabviewRT
 
+Tested with: Windows 7, labview 2017 32-bit.
+
 In order to communicate with LabviewRT using shared memories, the 
 ni package RT IPC has to be installed (Tested with version 1.5.1.19).
 4 VIs were created:
