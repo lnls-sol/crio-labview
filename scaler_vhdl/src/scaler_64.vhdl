@@ -8,9 +8,7 @@
 ---------------------------------------------------------------------------------------
 
 library ieee;
-use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use work.utils.all;
 
 
@@ -22,8 +20,8 @@ port (
 	fpga_enable_i       : in  std_logic;
 	one_shot_i          : in  std_logic;
 	scaler_enable_i     : in  std_logic; 
-	gate_i              : in  arraySTDLV1(0 to 63);
-	pulse_i             : in  arraySTDLV1(0 to 63);
+	gate_i              : in  std_logic_vector(63 downto 0);
+	pulse_i             : in  std_logic_vector(63 downto 0);
 	preset_value_i      : in  arraySTDLV32(0 to 63);	
 	counter_o           : out arraySTDLV32(0 to 63);
 	done_o              : out std_logic 
@@ -41,7 +39,8 @@ architecture rtl of scaler64 is
 begin 
 
 
-
+    done_o <= done(0);
+    
     scaler_ctrl : entity work.scaler_ctrl
     port map (
         clk_i               => clk_i,

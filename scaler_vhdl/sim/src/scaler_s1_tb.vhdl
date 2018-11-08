@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
---  File:       postobit_block.vhd
---  Desc:       strips one of the position bits and outputs it
---
+--  File:       scaler_s1_tb.vhd
+--  Desc:       test bench for scaler_s1
+-- Author      : Dawood Alnajjar (dawood.alnajjar@lnls.br)
 --------------------------------------------------------------------------------
 
 library ieee;

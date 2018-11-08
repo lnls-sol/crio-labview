@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
---  File:       scaler_sx_tb.vhd
---  Desc:       test bench for scaler_sx
+--  File:       scaler_64_tb.vhd
+--  Desc:       test bench for scaler_64
 -- Author      : Dawood Alnajjar (dawood.alnajjar@lnls.br)
 --------------------------------------------------------------------------------
 
@@ -8,25 +8,26 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.env.all;
+use work.utils.all;
 
 library work;
 
 
-entity scaler_sx_tb is
-end scaler_sx_tb;
+entity scaler_64_tb is
+end scaler_64_tb;
 
-architecture rtl of scaler_sx_tb is
+architecture rtl of scaler_64_tb is
 
-    signal clk_10              : std_logic := '0';
-	signal reset_i             : std_logic := '0';
-	signal fpga_enable_i       : std_logic := '1';
-	signal jump_to_end_i       : std_logic;
-	signal scaler_enable_i     : std_logic; -- This starts and stops the counters (and holds until enable is set to 1 again. Setting to one again, resets counters)
-	signal gate_i              : std_logic; -- This decides whether simple or preset is chosen
-	signal pulse_i             : std_logic; -- This is the signal to be evaluated
-	signal preset_value_i      : std_logic_vector(31 downto 0) := (others => '0');	
-	signal counter_o           : std_logic_vector(31 downto 0);
-	signal done_o              : std_logic;
+    signal clk_10                      : std_logic := '0';
+	signal reset_i                     : std_logic;
+	signal fpga_enable_i               : std_logic := '1';
+	signal one_shot_i                  : std_logic := '0';
+	signal scaler_enable_i             : std_logic; 
+	signal gate_i                      : std_logic_vector(63 downto 0) :=  (others => '0');
+	signal pulse_i                     : std_logic_vector(63 downto 0) :=  (others => '0');
+	signal preset_value_i              : arraySTDLV32(0 to 63) :=  (others => (others => '0'));	
+	signal counter_o                   : arraySTDLV32(0 to 63) :=  (others => (others => '0'));
+	signal done_o                      : std_logic;
 
     constant   preset_time  : std_logic := '1';    
     constant   preset_val   : std_logic := '0';  
@@ -63,65 +64,68 @@ process begin
 end process;
 
 process begin
-        clk_gen(pulse_i, 10.000E5); 
+        clk_gen(pulse_i(1), 10.000E5); 
+end process;
+
+process begin
+        clk_gen(pulse_i(2), 10.000E4); 
+end process;
+
+process begin
+        clk_gen(pulse_i(3), 10.000E3); 
 end process;
 
 process begin
 
-------------------- Test 1 --- Count to 256
+------------------- Test 1 --- Count S1 to 256
         reset_i <= '1';
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
-	    jump_to_end_i <= '0';
-        gate_i <= '1';
-	    preset_value_i(8 downto 0) <=  "100000000";
+        gate_i(0) <= '1';
+	    preset_value_i(0)(8 downto 0) <=  "100000000";
+	    scaler_enable_i <= '1';
+        wait until done_o = '1';
+	    scaler_enable_i <= '0';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
+
+------------------- Test 2 --- Count S2 to 256 while S1 and S3 are free counting
+        reset_i <= '1';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
+        reset_i <= '0';
+        gate_i(0) <= '0';
+        gate_i(1) <= '1';        
+        gate_i(2) <= '0';                
+	    preset_value_i(1)(8 downto 0) <=  "100000000";
 	    scaler_enable_i <= '1';
         wait until done_o = '1';
 	    scaler_enable_i <= '0';
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         
-------------------- Test 2 --- Count infinitely
-        gate_i <= '0';
-	    preset_value_i(8 downto 0) <=  "100000000";
-	    scaler_enable_i <= '1';
-        wait for 100000000 ps;
-        jump_to_end_i <= '1';
-        wait until done_o = '1';      
-	    scaler_enable_i <= '0';
-	    wait until done_o = '0';
-        wait_posedge(clk_10);
-        wait_posedge(clk_10);        	    
-        stop(0);
-
-------------------- Test 3 --- disable enable and hold
-        gate_i <= '0';
-	    preset_value_i(8 downto 0) <=  "100000000";
-	    scaler_enable_i <= '1';
-        wait for 100000000 ps;
-        scaler_enable_i <= '0';
-	    wait until done_o = '0';
-        wait_posedge(clk_10);
-        wait_posedge(clk_10);        	    
+        wait for 1000000000 ps; 
+      	    
         stop(0);     
 end process;
 
 
 
-scaler : entity work.scaler_sx
+scaler64 : entity work.scaler64
 port map (
 
     clk_i               => clk_10,
 	reset_i             => reset_i,
 	fpga_enable_i       => fpga_enable_i,
+	one_shot_i          => one_shot_i,
 	scaler_enable_i     => scaler_enable_i,
-	jump_to_end_i       => jump_to_end_i,
 	gate_i              => gate_i,
 	pulse_i             => pulse_i,
 	preset_value_i      => preset_value_i, 
 	counter_o           => counter_o,
 	done_o              => done_o
+
 );
 
 
