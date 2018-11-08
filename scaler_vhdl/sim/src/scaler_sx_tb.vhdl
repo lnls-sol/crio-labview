@@ -26,7 +26,6 @@ architecture rtl of scaler_sx_tb is
 	signal pulse_i             : std_logic; -- This is the signal to be evaluated
 	signal preset_value_i      : std_logic_vector(31 downto 0) := (others => '0');	
 	signal counter_o           : std_logic_vector(31 downto 0);
-	signal status_o            : std_logic_vector(1  downto 0);
 	signal done_o              : std_logic;
 
     constant   preset_time  : std_logic := '1';    
@@ -122,7 +121,6 @@ port map (
 	pulse_i             => pulse_i,
 	preset_value_i      => preset_value_i, 
 	counter_o           => counter_o,
-	status_o            => status_o, 
 	done_o              => done_o
 );
 

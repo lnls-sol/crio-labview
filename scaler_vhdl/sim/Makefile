@@ -5,10 +5,10 @@ TB=./src
 
 
 vsim: vcom
-	vsim -c work.scaler_tb -gpacketsToSend=${PKTS} -grand=${RAND} -do "run -all; quit"
+	vsim -c work.scaler_sx_tb -gpacketsToSend=${PKTS} -grand=${RAND} -do "run -all; quit"
 
-vcom: lib ${SRC}/scaler_s1.vhdl ${SRC}/scaler_sx.vhdl ${TB}/scaler_s1_tb.vhdl ${TB}/scaler_sx_tb.vhdl
-	vcom -2008 ${SRC}/scaler_s1.vhdl ${SRC}/scaler_sx.vhdl ${TB}/scaler_s1_tb.vhdl ${TB}/scaler_sx_tb.vhdl
+vcom: lib ${SRC}/scaler_s1.vhdl ${SRC}/scaler_sx.vhdl ${SRC}/utils.vhdl ${SRC}/scaler_64.vhdl ${TB}/scaler_s1_tb.vhdl ${TB}/scaler_sx_tb.vhdl
+	vcom -2008 ${SRC}/scaler_s1.vhdl ${SRC}/scaler_sx.vhdl ${SRC}/utils.vhdl  ${SRC}/scaler_64.vhdl ${TB}/scaler_s1_tb.vhdl ${TB}/scaler_sx_tb.vhdl
 
 lib:
 	vlib work

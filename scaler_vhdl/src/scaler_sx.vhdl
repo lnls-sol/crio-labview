@@ -1,8 +1,9 @@
 
 ---------------------------------------------------------------------------------------
--- Module name : scaler_pulse_counter
--- Description : This module is used as a basic element in the scaler implementation.
---               It counts pulses freely, or will preset limits.
+-- Module name : scaler_sx
+-- Description : This module is used as a basic element and is optimized for counters 
+--               that do not count clk_i, but pulse_i (s2 ~ s64). It supports gating 
+--               for counting pulses freely, or with preset limits.
 -- Author      : Dawood Alnajjar (dawood.alnajjar@lnls.br)
 ---------------------------------------------------------------------------------------
 
@@ -22,7 +23,6 @@ port (
 	pulse_i             : in  std_logic; -- This is the signal to be evaluated
 	preset_value_i      : in  std_logic_vector(31 downto 0);	
 	counter_o           : out std_logic_vector(31 downto 0);
-	status_o            : out std_logic_vector(1  downto 0);
 	done_o              : out  std_logic
 
 
@@ -35,9 +35,6 @@ architecture rtl of scaler_sx is
 
     TYPE state_type is (ST_RESET_ON_EXIT, ST_SIMPLE, ST_PRESET_VALUE, ST_DONE);
 
-    constant   stat_counting  : std_logic_vector(1  downto 0) := "01";
-    constant   stat_done      : std_logic_vector(1  downto 0) := "10";    
-    constant   stat_idle      : std_logic_vector(1  downto 0) := "00";   
 
 
     constant   simple       : std_logic := '0';    
@@ -52,14 +49,12 @@ architecture rtl of scaler_sx is
 	signal     pulse_f        : std_logic;	
 	signal     pulse_2f       : std_logic;	
 	signal     increment      : std_logic;	
-	signal     status         : std_logic_vector(1 downto 0);
 	signal     done           : std_logic;
 	
 begin 
 
 	counter_o <= pulse_cntr_r;
 	increment <= '1' when (((pulse_2f = '0') and (pulse_f = '1')) = true) else '0';
-    status_o <= status;
     done_o <= done;
     
     process(clk_i)
@@ -93,7 +88,6 @@ begin
     begin
         state_n <= state_r;
         pulse_cntr_n <= pulse_cntr_r;
-        status <= stat_idle;
         done <= '0';
         preset_val_n <= preset_val_r;
         case state_r is
@@ -112,7 +106,6 @@ begin
                 end if;
                 
             when ST_SIMPLE   => 
-                status <= stat_counting;
                 if (jump_to_end_i = '1') then
                     state_n <= ST_DONE; 
                 else
@@ -126,7 +119,6 @@ begin
                 end if;
 
             when ST_PRESET_VALUE  => 
-                status <= stat_counting;
                 if (jump_to_end_i = '1') then
                     state_n <= ST_DONE; 
                 else                
@@ -143,7 +135,6 @@ begin
                 end if;
             when ST_DONE  => 
                 done <= '1';
-                status <= stat_done;
                 if (scaler_enable_i = '0') then
                     state_n <= ST_RESET_ON_EXIT;
                 end if;
