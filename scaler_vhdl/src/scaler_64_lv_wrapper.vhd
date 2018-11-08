@@ -294,50 +294,21 @@ begin
     counter_62_o <= counter_o(62);
     preset_value_i(63) <= preset_value_63_i;
 
+scaler64 : entity work.scaler64
+port map (
 
-    scaler_ctrl : entity work.scaler_ctrl
-    port map (
-        clk_i               => clk_i,
-	    reset_i             => reset_i,
-	    fpga_enable_i       => fpga_enable_i,
-	    one_shot            => one_shot_i,
-	    jump_to_end_o       => jump_to_end,
-	    scaler_enable_i     => scaler_enable_i, 
-	    scaler_enable_o     => scaler_enable, 
-	    done_i              => done
+    clk_i               => clk_i,
+	reset_i             => reset_i,
+	fpga_enable_i       => fpga_enable_i,
+	one_shot_i          => one_shot_i,
+	scaler_enable_i     => scaler_enable_i,
+	gate_i              => gate_i,
+	pulse_i             => pulse_i,
+	preset_value_i      => preset_value_i, 
+	counter_o           => counter_o,
+	done_o              => done_o
 
-    );
-
-    scaler_s1 : entity work.scaler_s1
-    port map (
-
-        clk_i               => clk_i,
-	    reset_i             => reset_i,
-	    fpga_enable_i       => fpga_enable_i,
-	    scaler_enable_i     => scaler_enable,
-	    jump_to_end_i       => jump_to_end,
-	    gate_i              => gate_i(0),
-	    preset_value_i      => preset_value_i(0), 
-	    counter_o           => counter_o(0),
-	    done_o              => done(0)
-    );
-
-   G_1 : for I in 1 to 63 generate
-    scaler_sx : entity work.scaler_sx
-    port map (
-
-        clk_i               => clk_i,
-	    reset_i             => reset_i,
-	    fpga_enable_i       => fpga_enable_i,
-	    scaler_enable_i     => scaler_enable,
-	    jump_to_end_i       => jump_to_end,
-	    gate_i              => gate_i(I),
-	    pulse_i             => pulse_i(I),
-	    preset_value_i      => preset_value_i(I), 
-	    counter_o           => counter_o(I),
-	    done_o              => done(I)
-    );
-         end generate;
+);
          
 
 
