@@ -60,7 +60,7 @@ architecture rtl of scaler_64_tb is
 begin
 
 process begin
-        clk_gen(clk_10, 10.000E6);  
+        clk_gen(clk_10, 10.000E7);  
 end process;
 
 process begin
@@ -73,6 +73,30 @@ end process;
 
 process begin
         clk_gen(pulse_i(3), 10.000E3); 
+end process;
+
+process begin
+        clk_gen(pulse_i(4), 5.000E3); 
+end process;
+
+process begin
+        clk_gen(pulse_i(5), 5.000E4); 
+end process;
+
+process begin
+        clk_gen(pulse_i(6), 2.000E5); 
+end process;
+
+process begin
+        clk_gen(pulse_i(7), 7.000E4); 
+end process;
+
+process begin
+        clk_gen(pulse_i(8), 10.000E6); 
+end process;
+
+process begin
+        clk_gen(pulse_i(9), 3.000E6); 
 end process;
 
 process begin
@@ -104,9 +128,40 @@ process begin
 	    scaler_enable_i <= '0';
         wait_posedge(clk_10);
         wait_posedge(clk_10);
+
+------------------- Test 3 --- gating counters from 0 to 9.
+        reset_i <= '1';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
+        reset_i <= '0';
+        gate_i(0) <= '1';
+        gate_i(1) <= '1';        
+        gate_i(2) <= '1';                
+        gate_i(3) <= '1'; 
+        gate_i(4) <= '1'; 
+        gate_i(5) <= '1'; 
+        gate_i(6) <= '1'; 
+        gate_i(7) <= '1'; 
+        gate_i(8) <= '1'; 
+        gate_i(9) <= '1'; 
+	    preset_value_i(0)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(1)(8 downto 0) <=  "100000000";
+	    preset_value_i(2)(8 downto 0) <=  "100000000";
+	    preset_value_i(3)(8 downto 0) <=  "100000000";
+	    preset_value_i(4)(8 downto 0) <=  "100000000";
+	    preset_value_i(5)(8 downto 0) <=  "100000000";
+	    preset_value_i(6)(8 downto 0) <=  "100000000";
+	    preset_value_i(7)(8 downto 0) <=  "100000000";
+	    preset_value_i(8)(8 downto 0) <=  "100000000";
+	    preset_value_i(9)(8 downto 0) <=  "100000000";
+	    scaler_enable_i <= '1';
+        wait until done_o = '1';
+	    scaler_enable_i <= '0';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
         
-        wait for 1000000000 ps; 
-      	    
+        wait for 1000 ns;
+     	    
         stop(0);     
 end process;
 
