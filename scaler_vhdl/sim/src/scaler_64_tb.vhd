@@ -34,7 +34,8 @@ architecture rtl of scaler_64_tb is
 
     constant   simple       : std_logic := '0';    
     constant   preset       : std_logic := '1';  
-    
+
+    constant   ones         : std_logic_vector(counter_o(1)'range) := (others => '1');     
     -- Procedure for clock generation
     procedure clk_gen(signal clk : out std_logic; constant FREQ : real) is
         constant PERIOD    : time := 1 sec / FREQ;        -- Full period
@@ -161,7 +162,31 @@ process begin
         wait_posedge(clk_10);
         
         wait for 1000 ns;
-     	    
+
+------------------- Test 4 --- saturate counters 1 and 2
+        reset_i <= '1';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
+        reset_i <= '0';
+        gate_i(0) <= '0';
+        gate_i(1) <= '0';        
+        gate_i(2) <= '0';                
+        gate_i(3) <= '0'; 
+        gate_i(4) <= '0'; 
+        gate_i(5) <= '0'; 
+        gate_i(6) <= '0'; 
+        gate_i(7) <= '0'; 
+        gate_i(8) <= '0'; 
+        gate_i(9) <= '0'; 
+
+	    scaler_enable_i <= '1';
+        wait until counter_o(1) = ones;
+	    scaler_enable_i <= '0';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);
+        
+
+             	    
         stop(0);     
 end process;
 

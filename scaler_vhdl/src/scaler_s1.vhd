@@ -36,7 +36,7 @@ architecture rtl of scaler_s1 is
 
     constant   simple       : std_logic := '0';    
     constant   preset       : std_logic := '1';  
-          
+  
     
     signal     preset_val_r   : std_logic_vector(31 downto 0);
     signal     preset_val_n   : std_logic_vector(31 downto 0);    
@@ -45,7 +45,9 @@ architecture rtl of scaler_s1 is
 	signal     state_r        : state_type;    
 	signal     state_n        : state_type;    
 	signal     done           : std_logic;
-	
+
+    constant   ones         : std_logic_vector(pulse_cntr_r'range) := (others => '1');    
+    	
 begin 
 
 	counter_o <= pulse_cntr_r;
@@ -96,6 +98,9 @@ begin
             when ST_SIMPLE   => 
                 if (scaler_enable_i = '1') then
                     pulse_cntr_n <= pulse_cntr_r + 1;
+                    if (pulse_cntr_r = ones) then
+                        pulse_cntr_n <= pulse_cntr_r;
+                    end if;
                 else
                     state_n <= ST_RESET_ON_EXIT;      
                 end if;
@@ -107,6 +112,9 @@ begin
                     pulse_cntr_n <= pulse_cntr_r + 1;
                     if (pulse_cntr_r + 1 >= preset_val_r) then
                         state_n <= ST_DONE; 
+                    end if;
+                    if (pulse_cntr_r = ones) then
+                        pulse_cntr_n <= pulse_cntr_r;
                     end if;
                 else
                     state_n <= ST_RESET_ON_EXIT;      

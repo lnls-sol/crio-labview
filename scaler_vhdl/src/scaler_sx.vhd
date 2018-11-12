@@ -51,6 +51,7 @@ architecture rtl of scaler_sx is
 	signal     increment      : std_logic;	
 	signal     done           : std_logic;
 	
+    constant   ones         : std_logic_vector(pulse_cntr_r'range) := (others => '1');    
 begin 
 
 	counter_o <= pulse_cntr_r;
@@ -113,10 +114,14 @@ begin
                         if (increment = '1') then
                             pulse_cntr_n <= pulse_cntr_r + 1;
                         end if;
+                        if (pulse_cntr_r = ones) then
+                            pulse_cntr_n <= pulse_cntr_r;
+                        end if;                       
                     else
                         state_n <= ST_RESET_ON_EXIT;      
                     end if;
                 end if;
+
 
             when ST_PRESET_VALUE  => 
                 if (jump_to_end_i = '1') then
@@ -126,6 +131,9 @@ begin
                         if (increment = '1') then
                             pulse_cntr_n <= pulse_cntr_r + 1;
                         end if;
+                        if (pulse_cntr_r = ones) then
+                            pulse_cntr_n <= pulse_cntr_r;
+                        end if;                        
                         if (pulse_cntr_r >= preset_val_r) then
                             state_n <= ST_DONE; 
                         end if;
