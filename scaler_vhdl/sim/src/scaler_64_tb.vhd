@@ -101,6 +101,10 @@ process begin
 end process;
 
 process begin
+        clk_gen(pulse_i(63), 3.000E6); 
+end process;
+
+process begin
 
 ------------------- Test 1 --- Count S1 to 256
         reset_i <= '1';

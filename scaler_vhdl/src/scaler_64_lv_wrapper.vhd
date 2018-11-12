@@ -293,7 +293,8 @@ begin
     preset_value_i(62) <= preset_value_62_i;
     counter_62_o <= counter_o(62);
     preset_value_i(63) <= preset_value_63_i;
-
+    counter_63_o <= counter_o(63);
+    
 scaler64 : entity work.scaler64
 port map (
 
