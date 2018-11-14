@@ -21,7 +21,8 @@ port (
 	one_shot_i          : in  std_logic;
 	scaler_enable_i     : in  std_logic; 
 	gate_i              : in  std_logic_vector(63 downto 0);
-	pulse_i             : in  std_logic_vector(63 downto 0);
+	pulse_i             : in  std_logic_vector(63 downto 1);
+	val_to_sum_i        : in  arraySTDLV32(1 to 63);
 	preset_value_i      : in  arraySTDLV32(0 to 63);	
 	counter_o           : out arraySTDLV32(0 to 63);
 	done_o              : out std_logic 
@@ -79,6 +80,7 @@ begin
 	    jump_to_end_i       => jump_to_end,
 	    gate_i              => gate_i(I),
 	    pulse_i             => pulse_i(I),
+	    val_to_sum_i        => val_to_sum_i(I),
 	    preset_value_i      => preset_value_i(I), 
 	    counter_o           => counter_o(I),
 	    done_o              => done(I)

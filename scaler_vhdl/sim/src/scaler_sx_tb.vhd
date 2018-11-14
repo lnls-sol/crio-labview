@@ -20,12 +20,14 @@ architecture rtl of scaler_sx_tb is
     signal clk_10              : std_logic := '0';
 	signal reset_i             : std_logic := '0';
 	signal fpga_enable_i       : std_logic := '1';
+	signal test_num            : integer   := 0;
 	signal jump_to_end_i       : std_logic;
 	signal scaler_enable_i     : std_logic; -- This starts and stops the counters (and holds until enable is set to 1 again. Setting to one again, resets counters)
 	signal gate_i              : std_logic; -- This decides whether simple or preset is chosen
 	signal pulse_i             : std_logic; -- This is the signal to be evaluated
 	signal preset_value_i      : std_logic_vector(31 downto 0) := (others => '0');	
 	signal counter_o           : std_logic_vector(31 downto 0);
+	signal val_to_sum_i        : std_logic_vector(31 downto 0) := (others => '0');
 	signal done_o              : std_logic;
 
     constant   preset_time  : std_logic := '1';    
@@ -33,7 +35,7 @@ architecture rtl of scaler_sx_tb is
 
     constant   simple       : std_logic := '0';    
     constant   preset       : std_logic := '1';  
-    
+        constant   ones         : std_logic_vector(counter_o'range) := (others => '1');    
     -- Procedure for clock generation
     procedure clk_gen(signal clk : out std_logic; constant FREQ : real) is
         constant PERIOD    : time := 1 sec / FREQ;        -- Full period
@@ -70,9 +72,11 @@ process begin
 
 ------------------- Test 1 --- Count to 256
         reset_i <= '1';
+        test_num <= 1;
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
+        val_to_sum_i(0)<= '1';
 	    jump_to_end_i <= '0';
         gate_i <= '1';
 	    preset_value_i(8 downto 0) <=  "100000000";
@@ -83,9 +87,11 @@ process begin
         wait_posedge(clk_10);
         
 ------------------- Test 2 --- Count infinitely
+        test_num <= 2;
         gate_i <= '0';
 	    preset_value_i(8 downto 0) <=  "100000000";
 	    scaler_enable_i <= '1';
+        val_to_sum_i(0)<= '1';  
         wait for 100000000 ps;
         jump_to_end_i <= '1';
         wait until done_o = '1';      
@@ -93,18 +99,50 @@ process begin
 	    wait until done_o = '0';
         wait_posedge(clk_10);
         wait_posedge(clk_10);        	    
-        stop(0);
 
 ------------------- Test 3 --- disable enable and hold
+        test_num <= 3;
+        jump_to_end_i <= '0';
         gate_i <= '0';
 	    preset_value_i(8 downto 0) <=  "100000000";
+        val_to_sum_i(0)<= '1';
 	    scaler_enable_i <= '1';
-        wait for 100000000 ps;
+        wait for 1000000 ps;
+        scaler_enable_i <= '0';
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);        	    
+
+
+------------------- Test 4 --- Sum analog
+        test_num <= 4;
+        gate_i <= '1';
+        jump_to_end_i <= '0';
+	    preset_value_i(10 downto 0) <=  "10000000000";
+	    val_to_sum_i(7 downto 0)<= "11111111";
+	    wait_posedge(clk_10);
+	    scaler_enable_i <= '1';
+        wait until done_o = '1';
         scaler_enable_i <= '0';
 	    wait until done_o = '0';
         wait_posedge(clk_10);
-        wait_posedge(clk_10);        	    
-        stop(0);     
+        wait_posedge(clk_10);    
+
+
+------------------- Test 5 --- Sum analog, saturate counter
+        test_num <= 5;
+        gate_i <= '0';
+        jump_to_end_i <= '0';
+	    val_to_sum_i(15 downto 0)<= "1111111111111111";
+	    wait_posedge(clk_10);
+	    scaler_enable_i <= '1';
+        wait until done_o = '1';
+        scaler_enable_i <= '0';
+	    wait until counter_o = ones;
+        wait_posedge(clk_10);
+        wait_posedge(clk_10);   
+        
+                    	    
+        stop(0);            
 end process;
 
 
@@ -119,6 +157,7 @@ port map (
 	jump_to_end_i       => jump_to_end_i,
 	gate_i              => gate_i,
 	pulse_i             => pulse_i,
+	val_to_sum_i        => val_to_sum_i,
 	preset_value_i      => preset_value_i, 
 	counter_o           => counter_o,
 	done_o              => done_o

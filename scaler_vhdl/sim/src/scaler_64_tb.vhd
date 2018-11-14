@@ -24,7 +24,8 @@ architecture rtl of scaler_64_tb is
 	signal one_shot_i                  : std_logic := '0';
 	signal scaler_enable_i             : std_logic; 
 	signal gate_i                      : std_logic_vector(63 downto 0) :=  (others => '0');
-	signal pulse_i                     : std_logic_vector(63 downto 0) :=  (others => '0');
+	signal pulse_i                     : std_logic_vector(63 downto 1) :=  (others => '0');
+	signal val_to_sum_i                : arraySTDLV32(1 to 63) :=  (others => (others => '0'));	
 	signal preset_value_i              : arraySTDLV32(0 to 63) :=  (others => (others => '0'));	
 	signal counter_o                   : arraySTDLV32(0 to 63) :=  (others => (others => '0'));
 	signal done_o                      : std_logic;
@@ -34,7 +35,7 @@ architecture rtl of scaler_64_tb is
 
     constant   simple       : std_logic := '0';    
     constant   preset       : std_logic := '1';  
-
+	signal test_num            : integer   := 0;
     constant   ones         : std_logic_vector(counter_o(1)'range) := (others => '1');     
     -- Procedure for clock generation
     procedure clk_gen(signal clk : out std_logic; constant FREQ : real) is
@@ -62,6 +63,10 @@ begin
 
 process begin
         clk_gen(clk_10, 10.000E7);  
+end process;
+
+process begin
+        clk_gen(pulse_i(1), 10.000E5); 
 end process;
 
 process begin
@@ -108,10 +113,12 @@ process begin
 
 ------------------- Test 1 --- Count S1 to 256
         reset_i <= '1';
+        test_num <= 1;
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
         gate_i(0) <= '1';
+        val_to_sum_i(1)(0) <= '1';
 	    preset_value_i(0)(8 downto 0) <=  "100000000";
 	    scaler_enable_i <= '1';
         wait until done_o = '1';
@@ -121,12 +128,15 @@ process begin
 
 ------------------- Test 2 --- Count S2 to 256 while S1 and S3 are free counting
         reset_i <= '1';
+        test_num <= 2;
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
         gate_i(0) <= '0';
         gate_i(1) <= '1';        
-        gate_i(2) <= '0';                
+        gate_i(2) <= '0';  
+        val_to_sum_i(1)(0) <= '1';              
+        val_to_sum_i(2)(0) <= '1'; 
 	    preset_value_i(1)(8 downto 0) <=  "100000000";
 	    scaler_enable_i <= '1';
         wait until done_o = '1';
@@ -136,6 +146,7 @@ process begin
 
 ------------------- Test 3 --- gating counters from 0 to 9.
         reset_i <= '1';
+        test_num <= 3;
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
@@ -148,7 +159,16 @@ process begin
         gate_i(6) <= '1'; 
         gate_i(7) <= '1'; 
         gate_i(8) <= '1'; 
-        gate_i(9) <= '1'; 
+        gate_i(9) <= '1';
+        val_to_sum_i(1)(0) <= '1';              
+        val_to_sum_i(2)(0) <= '1';          
+        val_to_sum_i(3)(0) <= '1'; 
+        val_to_sum_i(4)(0) <= '1'; 
+        val_to_sum_i(5)(0) <= '1'; 
+        val_to_sum_i(6)(0) <= '1'; 
+        val_to_sum_i(7)(0) <= '1'; 
+        val_to_sum_i(8)(0) <= '1'; 
+        val_to_sum_i(9)(0) <= '1'; 
 	    preset_value_i(0)(12 downto 0) <=  "1000000000000";
 	    preset_value_i(1)(8 downto 0) <=  "100000000";
 	    preset_value_i(2)(8 downto 0) <=  "100000000";
@@ -167,8 +187,10 @@ process begin
         
         wait for 1000 ns;
 
-------------------- Test 4 --- saturate counters 1 and 2
+
+------------------- Test 4 --- Analog mode
         reset_i <= '1';
+        test_num <= 4;
         wait_posedge(clk_10);
         wait_posedge(clk_10);
         reset_i <= '0';
@@ -182,13 +204,30 @@ process begin
         gate_i(7) <= '0'; 
         gate_i(8) <= '0'; 
         gate_i(9) <= '0'; 
-
+        val_to_sum_i(1)(12 downto 0) <=  "1000000000000";             
+        val_to_sum_i(2)(12 downto 0) <=  "1000000000000";          
+        val_to_sum_i(3)(12 downto 0) <=  "1000000000000";
+        val_to_sum_i(4)(12 downto 0) <=  "1000000000000";
+        val_to_sum_i(5)(12 downto 0) <=  "1000000000000";
+        val_to_sum_i(6)(12 downto 0) <=  "1000000000000"; 
+        val_to_sum_i(7)(12 downto 0) <=  "1000000000000";
+        val_to_sum_i(8)(12 downto 0) <=  "1000000000000";
+        val_to_sum_i(9)(12 downto 0) <=  "1000000000000"; 
+	    preset_value_i(0)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(1)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(2)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(3)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(4)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(5)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(6)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(7)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(8)(12 downto 0) <=  "1000000000000";
+	    preset_value_i(9)(12 downto 0) <=  "1000000000000";        
 	    scaler_enable_i <= '1';
         wait until counter_o(1) = ones;
 	    scaler_enable_i <= '0';
         wait_posedge(clk_10);
-        wait_posedge(clk_10);
-        
+        wait_posedge(clk_10);        
 
              	    
         stop(0);     
@@ -204,6 +243,7 @@ port map (
 	fpga_enable_i       => fpga_enable_i,
 	one_shot_i          => one_shot_i,
 	scaler_enable_i     => scaler_enable_i,
+	val_to_sum_i        => val_to_sum_i,
 	gate_i              => gate_i,
 	pulse_i             => pulse_i,
 	preset_value_i      => preset_value_i, 

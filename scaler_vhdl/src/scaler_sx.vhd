@@ -21,6 +21,7 @@ port (
 	scaler_enable_i     : in  std_logic; -- This starts and stops the counters (and holds until enable is set to 1 again. Setting to one again, resets counters)
 	gate_i              : in  std_logic; -- This decides whether simple or preset is chosen
 	pulse_i             : in  std_logic; -- This is the signal to be evaluated
+	val_to_sum_i        : in  std_logic_vector(31 downto 0);	
 	preset_value_i      : in  std_logic_vector(31 downto 0);	
 	counter_o           : out std_logic_vector(31 downto 0);
 	done_o              : out  std_logic
@@ -42,8 +43,8 @@ architecture rtl of scaler_sx is
           
     signal     preset_val_r   : std_logic_vector(31 downto 0);
     signal     preset_val_n   : std_logic_vector(31 downto 0);    
-    signal     pulse_cntr_r   : std_logic_vector(31 downto 0);
-    signal     pulse_cntr_n   : std_logic_vector(31 downto 0);    
+    signal     sum_r   : std_logic_vector(31 downto 0);
+    signal     sum_n   : std_logic_vector(31 downto 0);    
 	signal     state_r        : state_type;    
 	signal     state_n        : state_type;    
 	signal     pulse_f        : std_logic;	
@@ -51,10 +52,10 @@ architecture rtl of scaler_sx is
 	signal     increment      : std_logic;	
 	signal     done           : std_logic;
 	
-    constant   ones         : std_logic_vector(pulse_cntr_r'range) := (others => '1');    
+    constant   ones         : std_logic_vector(sum_r'range) := (others => '1');    
 begin 
 
-	counter_o <= pulse_cntr_r;
+	counter_o <= sum_r;
 	increment <= '1' when (((pulse_2f = '0') and (pulse_f = '1')) = true) else '0';
     done_o <= done;
     
@@ -66,36 +67,36 @@ begin
                 state_r      <= ST_RESET_ON_EXIT;
                 pulse_f      <= '0';
                 pulse_2f     <= '0'; 
-                pulse_cntr_r <= (others => '0');
+                sum_r <= (others => '0');
             elsif (fpga_enable_i = '0') then
                 preset_val_r <= (others => '0');
                 state_r      <= ST_RESET_ON_EXIT;
                 pulse_f      <= '0';
                 pulse_2f     <= '0';
-                pulse_cntr_r <= (others => '0');                
+                sum_r <= (others => '0');                
 			else
                 preset_val_r <= preset_val_n;
                 state_r      <= state_n;                				
                 pulse_f      <= pulse_i;
                 pulse_2f     <= pulse_f;
-                pulse_cntr_r <= pulse_cntr_n;                
+                sum_r <= sum_n;                
             end if;
         end if;
     end process;
     
    
     
-    process (state_r, pulse_cntr_r, increment, preset_value_i, preset_val_r, jump_to_end_i, scaler_enable_i)
+    process (state_r, sum_r, increment, preset_value_i, preset_val_r, jump_to_end_i, scaler_enable_i, val_to_sum_i)
     begin
         state_n <= state_r;
-        pulse_cntr_n <= pulse_cntr_r;
+        sum_n <= sum_r;
         done <= '0';
         preset_val_n <= preset_val_r;
         case state_r is
         
             when ST_RESET_ON_EXIT  => 
                 if (scaler_enable_i = '1') then
-                    pulse_cntr_n  <= (others => '0');
+                    sum_n  <= (others => '0');
                     preset_val_n  <= preset_value_i;                    
                     if (gate_i = simple) then
                         state_n <= ST_SIMPLE;
@@ -112,29 +113,27 @@ begin
                 else
                     if (scaler_enable_i = '1') then
                         if (increment = '1') then
-                            pulse_cntr_n <= pulse_cntr_r + 1;
+                            sum_n <= sum_r + val_to_sum_i;
+                            if (sum_r > sum_r + val_to_sum_i) then
+                                sum_n <= ones;
+                            end if;     
                         end if;
-                        if (pulse_cntr_r = ones) then
-                            pulse_cntr_n <= pulse_cntr_r;
-                        end if;                       
                     else
                         state_n <= ST_RESET_ON_EXIT;      
                     end if;
                 end if;
-
-
             when ST_PRESET_VALUE  => 
                 if (jump_to_end_i = '1') then
                     state_n <= ST_DONE; 
                 else                
                     if (scaler_enable_i = '1') then
                         if (increment = '1') then
-                            pulse_cntr_n <= pulse_cntr_r + 1;
+                            sum_n <= sum_r + val_to_sum_i;
+                            if (sum_r > sum_r + val_to_sum_i) then
+                                sum_n <= ones;
+                            end if;   
                         end if;
-                        if (pulse_cntr_r = ones) then
-                            pulse_cntr_n <= pulse_cntr_r;
-                        end if;                        
-                        if (pulse_cntr_r >= preset_val_r) then
+                        if (sum_r >= preset_val_r) then
                             state_n <= ST_DONE; 
                         end if;
                     else
