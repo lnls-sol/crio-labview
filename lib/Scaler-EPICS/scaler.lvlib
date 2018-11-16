@@ -4,6 +4,7 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">385908736</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="scaler64.vi" Type="VI" URL="../scaler64.vi"/>
 	<Item Name="scaler64_analog.vi" Type="VI" URL="../scaler64_analog.vi"/>
 	<Item Name="scaler64_digital.vi" Type="VI" URL="../scaler64_digital.vi"/>
 </Library>
