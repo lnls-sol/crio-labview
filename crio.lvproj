@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="17008000">
+<Project Type="Project" LVVersion="18008000">
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -15,7 +15,7 @@
 	</Item>
 	<Item Name="RT CompactRIO Target" Type="RT CompactRIO">
 		<Property Name="alias.name" Type="Str">RT CompactRIO Target</Property>
-		<Property Name="alias.value" Type="Str">10.2.104.32</Property>
+		<Property Name="alias.value" Type="Str">10.2.101.43</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,x64;DeviceCode,7875;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">7875</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
@@ -1899,7 +1899,6 @@ AddOutputFilter chunkFilter
 					<Item Name="vi.lib" Type="Folder">
 						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					</Item>
-					<Item Name="xsimkE7343CD01BD446888FE8A1ECD56163F1.dll" Type="Document" URL="../scaler_vhdl/src/Scaler64SimFiles/xsim.dir/scaler_64_lv_wrapper/xsimkE7343CD01BD446888FE8A1ECD56163F1.dll"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="CrioLinux" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
