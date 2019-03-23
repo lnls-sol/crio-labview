@@ -3,7 +3,7 @@
 This project shows examples on how to read/write to and from the FPGA and/or labviewRT
 from LinuxRT.
 
-## Communicating with the FPGA (CrioLinux.vi)
+## Communicating with the FPGA (fpga_all_example.vi)
 
 This VI shows examples on how the crio-linux-libs expects the variables
 to be generated or handled. There is no constraints on the source of the 
@@ -18,7 +18,7 @@ be referenced in the *.ini file and the IOC to facilitate debugging.
 
 ## Communicating with LabviewRT
 
-Tested with: Windows 7, labview 2017 32-bit.
+Tested with: Windows 10, labview 2018 32-bit.
 
 In order to communicate with LabviewRT using shared memories, the 
 ni package RT IPC has to be installed (Tested with version 1.5.1.19).
@@ -31,3 +31,8 @@ ni package RT IPC has to be installed (Tested with version 1.5.1.19).
  The shared memory read and write blocks are chained, and their order in the chained
  represents the index that will be passed to the crio-linuc-lib using the 
  *.ini file.
+
+
+## Importing
+
+When importing to other projects, add llb files in the llbs directiory.
