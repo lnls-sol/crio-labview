@@ -1939,343 +1939,42 @@ AddOutputFilter chunkFilter
 						<Property Name="TargetName" Type="Str">FPGA Target</Property>
 						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/fpga_all_example.vi</Property>
 					</Item>
-					<Item Name="scaler" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaler_T1UzbL6EcGs.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaler_T1UzbL6EcGs.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaler_T1UzbL6EcGs.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref"></Property>
-					</Item>
-					<Item Name="scaler1_pulse" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler1_pulse</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaler1pulse_mTT-fVBj92o.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaler1pulse_mTT-fVBj92o.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaler1pulse_mTT-fVBj92o.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref"></Property>
-					</Item>
-					<Item Name="scaler_pulse" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler_pulse</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scalerpulse_fgtYK71BAQc.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scalerpulse_fgtYK71BAQc.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scalerpulse_fgtYK71BAQc.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/scaler_digitial_64channels_example.vi</Property>
-					</Item>
-					<Item Name="scaler_test" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler_test</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scalertest_eEYDr4JsItc.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref"></Property>
-					</Item>
-					<Item Name="scaler1_example" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler1_example</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaler1example_E-7j+BpFlSg.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaler1example_E-7j+BpFlSg.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaler1example_E-7j+BpFlSg.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/scaler_digital_2channel_example.vi</Property>
-					</Item>
-					<Item Name="scaler_analog_64channels_example" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler_analog_64channels_example</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaleranalog64ch_jiZxqZyCLVY.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaleranalog64ch_jiZxqZyCLVY.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaleranalog64ch_jiZxqZyCLVY.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/scaler_analog_12channels_example.vi</Property>
-					</Item>
-					<Item Name="scaler_analog_2channels_example" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler_analog_2channels_example</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaleranalog2cha_2Z7YHScZZ9Y.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaleranalog2cha_2Z7YHScZZ9Y.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaleranalog2cha_2Z7YHScZZ9Y.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/scaler_analog_2channels_example.vi</Property>
-					</Item>
-					<Item Name="scaler64_digital" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler64_digital</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaler64digital_2KruFqY2BJ8.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib/scaler64_digital.vi</Property>
-					</Item>
-					<Item Name="scaler_analog_digital_2channels_example" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
-						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
-						<Property Name="BuildSpecDecription" Type="Str"></Property>
-						<Property Name="BuildSpecName" Type="Str">scaler_analog_digital_2channels_example</Property>
-						<Property Name="Comp.BitfileName" Type="Str">crio_FPGATarget_scaleranalogdigi_dmCa9u3nVZg.lvbitx</Property>
-						<Property Name="Comp.CustomXilinxParameters" Type="Str"></Property>
-						<Property Name="Comp.MaxFanout" Type="Int">-1</Property>
-						<Property Name="Comp.RandomSeed" Type="Bool">false</Property>
-						<Property Name="Comp.Version.Build" Type="Int">0</Property>
-						<Property Name="Comp.Version.Fix" Type="Int">0</Property>
-						<Property Name="Comp.Version.Major" Type="Int">1</Property>
-						<Property Name="Comp.Version.Minor" Type="Int">0</Property>
-						<Property Name="Comp.VersionAutoIncrement" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.EnableMultiThreading" Type="Bool">true</Property>
-						<Property Name="Comp.Vivado.OptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PhysOptDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.PlaceDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RouteDirective" Type="Str"></Property>
-						<Property Name="Comp.Vivado.RunPowerOpt" Type="Bool">false</Property>
-						<Property Name="Comp.Vivado.Strategy" Type="Str">Default</Property>
-						<Property Name="Comp.Xilinx.DesignStrategy" Type="Str">balanced</Property>
-						<Property Name="Comp.Xilinx.MapEffort" Type="Str">default(noTiming)</Property>
-						<Property Name="Comp.Xilinx.ParEffort" Type="Str">standard</Property>
-						<Property Name="Comp.Xilinx.SynthEffort" Type="Str">normal</Property>
-						<Property Name="Comp.Xilinx.SynthGoal" Type="Str">speed</Property>
-						<Property Name="Comp.Xilinx.UseRecommended" Type="Bool">true</Property>
-						<Property Name="DefaultBuildSpec" Type="Bool">true</Property>
-						<Property Name="DestinationDirectory" Type="Path">FPGA Bitfiles</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/FPGA Bitfiles/crio_FPGATarget_scaleranalogdigi_dmCa9u3nVZg.lvbitx</Property>
-						<Property Name="NI.LV.FPGA.LastCompiledBitfilePathRelativeToProject" Type="Path">FPGA Bitfiles/crio_FPGATarget_scaleranalogdigi_dmCa9u3nVZg.lvbitx</Property>
-						<Property Name="ProjectPath" Type="Path">/C/Users/dawood.alnajjar/Desktop/labview/crio-linux/crio.lvproj</Property>
-						<Property Name="RelativePath" Type="Bool">true</Property>
-						<Property Name="RunWhenLoaded" Type="Bool">false</Property>
-						<Property Name="SupportDownload" Type="Bool">true</Property>
-						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
-						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/examples/scaler_analog_digital_2channels_example.vi</Property>
+					<Item Name="fpga-lib" Type="Source Distribution">
+						<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+						<Property Name="Bld_buildCacheID" Type="Str">{D06616CF-EF0D-4714-AE2D-D999C665320A}</Property>
+						<Property Name="Bld_buildSpecName" Type="Str">fpga-lib</Property>
+						<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
+						<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
+						<Property Name="Bld_excludedDirectory[1]" Type="Path">instr.lib</Property>
+						<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
+						<Property Name="Bld_excludedDirectory[2]" Type="Path">user.lib</Property>
+						<Property Name="Bld_excludedDirectory[2].pathType" Type="Str">relativeToAppDir</Property>
+						<Property Name="Bld_excludedDirectory[3]" Type="Path">resource/objmgr</Property>
+						<Property Name="Bld_excludedDirectory[3].pathType" Type="Str">relativeToAppDir</Property>
+						<Property Name="Bld_excludedDirectory[4]" Type="Path">/C/ProgramData/National Instruments/InstCache/18.0</Property>
+						<Property Name="Bld_excludedDirectory[5]" Type="Path">/C/Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+						<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
+						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
+						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+						<Property Name="Bld_previewCacheID" Type="Str">{1665D5AC-C968-4E68-9369-68DA0AAD53CC}</Property>
+						<Property Name="Bld_version.build" Type="Int">1</Property>
+						<Property Name="Bld_version.major" Type="Int">1</Property>
+						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
+						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
+						<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
+						<Property Name="Destination[0].type" Type="Str">LLB</Property>
+						<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+						<Property Name="Destination[1].path" Type="Path">../llbs/NI_AB_TARGETNAME</Property>
+						<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
+						<Property Name="DestinationCount" Type="Int">2</Property>
+						<Property Name="Source[0].itemID" Type="Str">{4E30CED4-9CA8-4777-A8AE-DCE0BE32FA50}</Property>
+						<Property Name="Source[0].type" Type="Str">Container</Property>
+						<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+						<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib</Property>
+						<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
+						<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+						<Property Name="Source[1].type" Type="Str">Library</Property>
+						<Property Name="SourceCount" Type="Int">2</Property>
 					</Item>
 				</Item>
 			</Item>
@@ -2320,6 +2019,45 @@ AddOutputFilter chunkFilter
 			</Item>
 			<Item Name="xsimkE7343CD01BD446888FE8A1ECD56163F1.dll" Type="Document" URL="../scaler_vhdl/src/Scaler64SimFiles/xsim.dir/scaler_64_lv_wrapper/xsimkE7343CD01BD446888FE8A1ECD56163F1.dll"/>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="rt-lib" Type="Source Distribution">
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{A8398827-8190-42DF-8D26-F2F0AE29F2CB}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">rt-lib</Property>
+				<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
+				<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[1]" Type="Path">instr.lib</Property>
+				<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[2]" Type="Path">user.lib</Property>
+				<Property Name="Bld_excludedDirectory[2].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[3]" Type="Path">resource/objmgr</Property>
+				<Property Name="Bld_excludedDirectory[3].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[4]" Type="Path">/C/ProgramData/National Instruments/InstCache/18.0</Property>
+				<Property Name="Bld_excludedDirectory[5]" Type="Path">/C/Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+				<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/rt-lib</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{AFB3FA55-4925-4C5E-A79B-74C1947CFF56}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path">/rt-lib.llb</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
+				<Property Name="Destination[0].path" Type="Path">/rt-lib.llb</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].type" Type="Str">LLB</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{9B2CD8F8-F303-4A0A-8A9B-FD1ACB7A0715}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/lib/labviewRT-EPICS/linuxSharedMemory.lvlib</Property>
+				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[1].type" Type="Str">Library</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>
