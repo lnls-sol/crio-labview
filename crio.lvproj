@@ -97,7 +97,7 @@ AddOutputFilter chunkFilter
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="RT-target examples" Type="Folder">
-			<Item Name="labviewRT_epics_example.vi" Type="VI" URL="../examples/labviewRT_epics_example.vi"/>
+			<Item Name="labviewRT_sm_example.vi" Type="VI" URL="../examples/labviewRT_sm_example.vi"/>
 			<Item Name="RtOpeningFpga.vi" Type="VI" URL="../examples/RtOpeningFpga.vi"/>
 		</Item>
 		<Item Name="Chassis" Type="cRIO Chassis">
@@ -1958,7 +1958,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
 						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 						<Property Name="Bld_previewCacheID" Type="Str">{1665D5AC-C968-4E68-9369-68DA0AAD53CC}</Property>
-						<Property Name="Bld_version.build" Type="Int">1</Property>
+						<Property Name="Bld_version.build" Type="Int">2</Property>
 						<Property Name="Bld_version.major" Type="Int">1</Property>
 						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
@@ -2040,7 +2040,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{AFB3FA55-4925-4C5E-A79B-74C1947CFF56}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/rt-lib.llb</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">4</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">/rt-lib.llb</Property>
