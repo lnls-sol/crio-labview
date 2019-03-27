@@ -28,6 +28,7 @@ architecture rtl of scaler_64_tb is
 	signal val_to_sum_i                : arraySTDLV32(1 to 63) :=  (others => (others => '0'));	
 	signal preset_value_i              : arraySTDLV32(0 to 63) :=  (others => (others => '0'));	
 	signal counter_o                   : arraySTDLV32(0 to 63) :=  (others => (others => '0'));
+	signal divisor_i                   : std_logic_vector(31 downto 0) :=  (others => '0');
 	signal done_o                      : std_logic;
 
     constant   preset_time  : std_logic := '1';    
@@ -111,6 +112,7 @@ end process;
 
 process begin
 
+        divisor_i(1 downto 0) <= "10";
 ------------------- Test 1 --- Count S1 to 256
         reset_i <= '1';
         test_num <= 1;
@@ -189,6 +191,7 @@ process begin
 
 
 ------------------- Test 4 --- Analog mode
+
         reset_i <= '1';
         test_num <= 4;
         wait_posedge(clk_10);
@@ -246,6 +249,7 @@ port map (
 	val_to_sum_i        => val_to_sum_i,
 	gate_i              => gate_i,
 	pulse_i             => pulse_i,
+	divisor_i           => divisor_i,
 	preset_value_i      => preset_value_i, 
 	counter_o           => counter_o,
 	done_o              => done_o

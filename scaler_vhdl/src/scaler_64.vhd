@@ -22,6 +22,7 @@ port (
 	scaler_enable_i     : in  std_logic; 
 	gate_i              : in  std_logic_vector(63 downto 0);
 	pulse_i             : in  std_logic_vector(63 downto 1);
+	divisor_i           : in  std_logic_vector(31 downto 0);
 	val_to_sum_i        : in  arraySTDLV32(1 to 63);
 	preset_value_i      : in  arraySTDLV32(0 to 63);	
 	counter_o           : out arraySTDLV32(0 to 63);
@@ -65,6 +66,7 @@ begin
 	    jump_to_end_i       => jump_to_end,
 	    gate_i              => gate_i(0),
 	    preset_value_i      => preset_value_i(0), 
+	    divisor_i           => divisor_i,
 	    counter_o           => counter_o(0),
 	    done_o              => done(0)
     );

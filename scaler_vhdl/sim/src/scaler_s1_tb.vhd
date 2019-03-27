@@ -26,7 +26,7 @@ architecture rtl of scaler_s1_tb is
 	signal preset_value_i      : std_logic_vector(31 downto 0) := (others => '0');	
 	signal counter_o           : std_logic_vector(31 downto 0);
 	signal done_o              : std_logic;
-
+	signal divisor_i           : std_logic_vector(31 downto 0) :=  (others => '0');
 
     constant   simple       : std_logic := '0';    
     constant   preset       : std_logic := '1';  
@@ -61,7 +61,7 @@ end process;
 
 
 process begin
-
+        divisor_i(0) <= '1';
 ------------------- Test 1 --- Count to 256
         reset_i <= '1';
         wait_posedge(clk_10);
@@ -112,6 +112,7 @@ port map (
 	scaler_enable_i     => scaler_enable_i,
 	jump_to_end_i       => jump_to_end_i,
 	gate_i              => gate_i,
+	divisor_i           => divisor_i,
 	preset_value_i      => preset_value_i, 
 	counter_o           => counter_o,
 	done_o              => done_o

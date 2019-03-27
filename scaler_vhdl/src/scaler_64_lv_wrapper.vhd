@@ -274,6 +274,7 @@ port (
     val_to_sum_63_i         : in  std_logic_vector(31 downto 0);
     preset_value_63_i       : in  std_logic_vector(31 downto 0);
     counter_63_o            : out std_logic_vector(31 downto 0);   
+    divisor_i               : in  std_logic_vector(31 downto 0);
 	done_o              : out std_logic 
 
 );
@@ -561,6 +562,7 @@ port map (
 	pulse_i             => pulse_i,
 	val_to_sum_i        => val_to_sum_i,
 	preset_value_i      => preset_value_i, 
+	divisor_i           => divisor_i,
 	counter_o           => counter_o,
 	done_o              => done_o
 

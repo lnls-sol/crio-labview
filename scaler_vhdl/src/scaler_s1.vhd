@@ -19,7 +19,8 @@ port (
 	jump_to_end_i       : in  std_logic;
 	scaler_enable_i     : in  std_logic; -- This starts and stops the counters (and holds until enable is set to 1 again. Setting to one again, resets counters)
 	gate_i              : in  std_logic; -- This decides whether simple or preset is chosen
-	preset_value_i      : in  std_logic_vector(31 downto 0);	
+	preset_value_i      : in  std_logic_vector(31 downto 0);
+	divisor_i           : in  std_logic_vector(31 downto 0);
 	counter_o           : out std_logic_vector(31 downto 0);
 	done_o              : out  std_logic
 
@@ -41,9 +42,13 @@ architecture rtl of scaler_s1 is
     signal     preset_val_r   : std_logic_vector(31 downto 0);
     signal     preset_val_n   : std_logic_vector(31 downto 0);    
     signal     pulse_cntr_r   : std_logic_vector(31 downto 0);
-    signal     pulse_cntr_n   : std_logic_vector(31 downto 0);    
+    signal     pulse_cntr_n   : std_logic_vector(31 downto 0);
+    signal     divisor_f      : std_logic_vector(31 downto 0);    
+    signal     divisor_2f     : std_logic_vector(31 downto 0);        
 	signal     state_r        : state_type;    
 	signal     state_n        : state_type;    
+    signal     tick_cntr_r    : std_logic_vector(31 downto 0);
+    signal     tick_cntr_n    : std_logic_vector(31 downto 0);	
 	signal     done           : std_logic;
 
     constant   ones         : std_logic_vector(pulse_cntr_r'range) := (others => '1');    
@@ -60,31 +65,42 @@ begin
                 preset_val_r <= (others => '0');
                 state_r      <= ST_RESET_ON_EXIT;
                 pulse_cntr_r <= (others => '0');
+                divisor_f  <= (others => '0');
+                divisor_2f <= (others => '0');
+                tick_cntr_r  <= (others => '0');
             elsif (fpga_enable_i = '0') then
                 preset_val_r <= (others => '0');
                 state_r      <= ST_RESET_ON_EXIT;
-                pulse_cntr_r <= (others => '0');                
+                pulse_cntr_r <= (others => '0');   
+                divisor_f  <= (others => '0');
+                divisor_2f <= (others => '0');                             
+                tick_cntr_r  <= (others => '0');                
 			else
                 preset_val_r <= preset_val_n;
                 state_r      <= state_n;                				
-                pulse_cntr_r <= pulse_cntr_n;                
+                pulse_cntr_r <= pulse_cntr_n;      
+                divisor_f  <= divisor_i;
+                divisor_2f <= divisor_f;                          
+                tick_cntr_r  <= tick_cntr_n;                
             end if;
         end if;
     end process;
     
    
     
-    process (state_r, pulse_cntr_r, preset_value_i, preset_val_r, jump_to_end_i, scaler_enable_i, gate_i)
+    process (state_r, pulse_cntr_r, preset_value_i, preset_val_r, jump_to_end_i, scaler_enable_i, gate_i, divisor_2f, tick_cntr_r)
     begin
         state_n <= state_r;
         pulse_cntr_n <= pulse_cntr_r;
         done <= '0';
         preset_val_n <= preset_val_r;
+        tick_cntr_n <= tick_cntr_r;
         case state_r is
         
             when ST_RESET_ON_EXIT  => 
                 if (scaler_enable_i = '1') then
                     pulse_cntr_n  <= (others => '0');
+                    tick_cntr_n <=  (others => '0');
                     preset_val_n  <= preset_value_i;                    
                     if (gate_i = simple) then
                         state_n <= ST_SIMPLE;
@@ -97,9 +113,14 @@ begin
                 
             when ST_SIMPLE   => 
                 if (scaler_enable_i = '1') then
-                    pulse_cntr_n <= pulse_cntr_r + 1;
-                    if (pulse_cntr_r = ones) then
-                        pulse_cntr_n <= pulse_cntr_r;
+                    if (tick_cntr_r+1 >= divisor_2f) then
+                        tick_cntr_n <= (others => '0');
+                        pulse_cntr_n <= pulse_cntr_r + 1;
+                        if (pulse_cntr_r = ones) then
+                            pulse_cntr_n <= pulse_cntr_r;
+                        end if;
+                    else
+                        tick_cntr_n <= tick_cntr_r + 1;
                     end if;
                 else
                     state_n <= ST_RESET_ON_EXIT;      
@@ -109,13 +130,18 @@ begin
                 end if;
             when ST_PRESET_VALUE  => 
                 if (scaler_enable_i = '1') then
-                    pulse_cntr_n <= pulse_cntr_r + 1;
-                    if (pulse_cntr_r + 1 >= preset_val_r) then
-                        state_n <= ST_DONE; 
-                    end if;
-                    if (pulse_cntr_r = ones) then
-                        pulse_cntr_n <= pulse_cntr_r;
-                    end if;
+                    if (tick_cntr_r+1 >= divisor_2f) then
+                        tick_cntr_n <= (others => '0');               
+                        pulse_cntr_n <= pulse_cntr_r + 1;
+                        if (pulse_cntr_r + 1 >= preset_val_r) then
+                            state_n <= ST_DONE; 
+                        end if;
+                        if (pulse_cntr_r = ones) then
+                            pulse_cntr_n <= pulse_cntr_r;
+                        end if;
+                    else
+                        tick_cntr_n <= tick_cntr_r + 1;
+                    end if;                        
                 else
                     state_n <= ST_RESET_ON_EXIT;      
                 end if;
