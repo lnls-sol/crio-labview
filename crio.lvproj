@@ -1958,7 +1958,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
 						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 						<Property Name="Bld_previewCacheID" Type="Str">{1665D5AC-C968-4E68-9369-68DA0AAD53CC}</Property>
-						<Property Name="Bld_version.build" Type="Int">3</Property>
+						<Property Name="Bld_version.build" Type="Int">10</Property>
 						<Property Name="Bld_version.major" Type="Int">1</Property>
 						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
@@ -1968,14 +1968,23 @@ AddOutputFilter chunkFilter
 						<Property Name="Destination[1].path" Type="Path">../llbs/NI_AB_TARGETNAME</Property>
 						<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 						<Property Name="DestinationCount" Type="Int">2</Property>
-						<Property Name="Source[0].itemID" Type="Str">{4E30CED4-9CA8-4777-A8AE-DCE0BE32FA50}</Property>
+						<Property Name="Source[0].itemID" Type="Str">{557ED991-B2E2-4464-A7E6-B404BBC3AD98}</Property>
 						<Property Name="Source[0].type" Type="Str">Container</Property>
 						<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 						<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib</Property>
 						<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 						<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
 						<Property Name="Source[1].type" Type="Str">Library</Property>
-						<Property Name="SourceCount" Type="Int">2</Property>
+						<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+						<Property Name="Source[2].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib/scaler64.vi</Property>
+						<Property Name="Source[2].type" Type="Str">VI</Property>
+						<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+						<Property Name="Source[3].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib/scaler64_analog.vi</Property>
+						<Property Name="Source[3].type" Type="Str">VI</Property>
+						<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+						<Property Name="Source[4].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib/scaler64_digital.vi</Property>
+						<Property Name="Source[4].type" Type="Str">VI</Property>
+						<Property Name="SourceCount" Type="Int">5</Property>
 					</Item>
 				</Item>
 			</Item>
