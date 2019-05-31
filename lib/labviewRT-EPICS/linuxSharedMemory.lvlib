@@ -6,28 +6,50 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="internal" Type="Folder">
 		<Item Name="increment shared memory pointer.vi" Type="VI" URL="../increment shared memory pointer.vi"/>
+		<Item Name="sm bool array read and increment.vi" Type="VI" URL="../sm bool array read and increment.vi"/>
+		<Item Name="sm bool array write and increment.vi" Type="VI" URL="../sm bool array write and increment.vi"/>
 		<Item Name="sm bool read and increment.vi" Type="VI" URL="../sm bool read and increment.vi"/>
 		<Item Name="sm bool write and increment.vi" Type="VI" URL="../sm bool write and increment.vi"/>
+		<Item Name="sm double array read and increment.vi" Type="VI" URL="../sm double array read and increment.vi"/>
+		<Item Name="sm double array write and increment.vi" Type="VI" URL="../sm double array write and increment.vi"/>
 		<Item Name="sm double read and increment.vi" Type="VI" URL="../sm double read and increment.vi"/>
 		<Item Name="sm double write and increment.vi" Type="VI" URL="../sm double write and increment.vi"/>
 		<Item Name="sm i8 read and increment.vi" Type="VI" URL="../sm i8 read and increment.vi"/>
+		<Item Name="sm i8 read array and increment.vi" Type="VI" URL="../sm i8 read array and increment.vi"/>
 		<Item Name="sm i8 write and increment.vi" Type="VI" URL="../sm i8 write and increment.vi"/>
+		<Item Name="sm i8 write array and increment.vi" Type="VI" URL="../sm i8 write array and increment.vi"/>
 		<Item Name="sm i16 read and increment.vi" Type="VI" URL="../sm i16 read and increment.vi"/>
+		<Item Name="sm i16 read array and increment.vi" Type="VI" URL="../sm i16 read array and increment.vi"/>
 		<Item Name="sm i16 write and increment.vi" Type="VI" URL="../sm i16 write and increment.vi"/>
+		<Item Name="sm i16 write array and increment.vi" Type="VI" URL="../sm i16 write array and increment.vi"/>
 		<Item Name="sm i32 read and increment.vi" Type="VI" URL="../sm i32 read and increment.vi"/>
+		<Item Name="sm i32 read array and increment.vi" Type="VI" URL="../sm i32 read array and increment.vi"/>
 		<Item Name="sm i32 write and increment.vi" Type="VI" URL="../sm i32 write and increment.vi"/>
+		<Item Name="sm i32 write array and increment.vi" Type="VI" URL="../sm i32 write array and increment.vi"/>
 		<Item Name="sm i64 read and increment.vi" Type="VI" URL="../sm i64 read and increment.vi"/>
+		<Item Name="sm i64 read array and increment.vi" Type="VI" URL="../sm i64 read array and increment.vi"/>
 		<Item Name="sm i64 write and increment.vi" Type="VI" URL="../sm i64 write and increment.vi"/>
+		<Item Name="sm i64 write array and increment.vi" Type="VI" URL="../sm i64 write array and increment.vi"/>
+		<Item Name="sm single array read and increment.vi" Type="VI" URL="../sm single array read and increment.vi"/>
+		<Item Name="sm single array write and increment.vi" Type="VI" URL="../sm single array write and increment.vi"/>
 		<Item Name="sm single read and increment.vi" Type="VI" URL="../sm single read and increment.vi"/>
 		<Item Name="sm single write and increment.vi" Type="VI" URL="../sm single write and increment.vi"/>
 		<Item Name="sm u8 read and increment.vi" Type="VI" URL="../sm u8 read and increment.vi"/>
+		<Item Name="sm u8 read array and increment.vi" Type="VI" URL="../sm u8 read array and increment.vi"/>
 		<Item Name="sm u8 write and increment.vi" Type="VI" URL="../sm u8 write and increment.vi"/>
+		<Item Name="sm u8 write array and increment.vi" Type="VI" URL="../sm u8 write array and increment.vi"/>
 		<Item Name="sm u16 read and increment.vi" Type="VI" URL="../sm u16 read and increment.vi"/>
+		<Item Name="sm u16 read array and increment.vi" Type="VI" URL="../sm u16 read array and increment.vi"/>
 		<Item Name="sm u16 write and increment.vi" Type="VI" URL="../sm u16 write and increment.vi"/>
+		<Item Name="sm u16 write array and increment.vi" Type="VI" URL="../sm u16 write array and increment.vi"/>
 		<Item Name="sm u32 read and increment.vi" Type="VI" URL="../sm u32 read and increment.vi"/>
+		<Item Name="sm u32 read array and increment.vi" Type="VI" URL="../sm u32 read array and increment.vi"/>
 		<Item Name="sm u32 write and increment.vi" Type="VI" URL="../sm u32 write and increment.vi"/>
+		<Item Name="sm u32 write array and increment.vi" Type="VI" URL="../sm u32 write array and increment.vi"/>
 		<Item Name="sm u64 read and increment.vi" Type="VI" URL="../sm u64 read and increment.vi"/>
+		<Item Name="sm u64 read array and increment.vi" Type="VI" URL="../sm u64 read array and increment.vi"/>
 		<Item Name="sm u64 write and increment.vi" Type="VI" URL="../sm u64 write and increment.vi"/>
+		<Item Name="sm u64 write array and increment.vi" Type="VI" URL="../sm u64 write array and increment.vi"/>
 	</Item>
 	<Item Name="IOC shared memory de-initialize.vi" Type="VI" URL="../IOC shared memory de-initialize.vi"/>
 	<Item Name="IOC shared memory initialize.vi" Type="VI" URL="../IOC shared memory initialize.vi"/>
