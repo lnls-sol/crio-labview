@@ -50,6 +50,7 @@
 		<Item Name="sm u64 read array and increment.vi" Type="VI" URL="../sm u64 read array and increment.vi"/>
 		<Item Name="sm u64 write and increment.vi" Type="VI" URL="../sm u64 write and increment.vi"/>
 		<Item Name="sm u64 write array and increment.vi" Type="VI" URL="../sm u64 write array and increment.vi"/>
+		<Item Name="upper bound check.vi" Type="VI" URL="../upper bound check.vi"/>
 	</Item>
 	<Item Name="IOC shared memory de-initialize.vi" Type="VI" URL="../IOC shared memory de-initialize.vi"/>
 	<Item Name="IOC shared memory initialize.vi" Type="VI" URL="../IOC shared memory initialize.vi"/>

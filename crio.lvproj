@@ -1904,6 +1904,7 @@ AddOutputFilter chunkFilter
 					<Item Name="vi.lib" Type="Folder">
 						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					</Item>
+					<Item Name="xsimkE7343CD01BD446888FE8A1ECD56163F1.dll" Type="Document" URL="../scaler_vhdl/src/Scaler64SimFiles/xsim.dir/scaler_64_lv_wrapper/xsimkE7343CD01BD446888FE8A1ECD56163F1.dll"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="CrioLinux" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
