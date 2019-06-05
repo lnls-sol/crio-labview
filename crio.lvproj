@@ -1904,7 +1904,6 @@ AddOutputFilter chunkFilter
 					<Item Name="vi.lib" Type="Folder">
 						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					</Item>
-					<Item Name="xsimkE7343CD01BD446888FE8A1ECD56163F1.dll" Type="Document" URL="../scaler_vhdl/src/Scaler64SimFiles/xsim.dir/scaler_64_lv_wrapper/xsimkE7343CD01BD446888FE8A1ECD56163F1.dll"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="CrioLinux" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -2092,7 +2091,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{AFB3FA55-4925-4C5E-A79B-74C1947CFF56}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/rt-lib.llb</Property>
-				<Property Name="Bld_version.build" Type="Int">6</Property>
+				<Property Name="Bld_version.build" Type="Int">7</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">/rt-lib.llb</Property>
