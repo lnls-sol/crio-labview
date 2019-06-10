@@ -1917,6 +1917,12 @@ AddOutputFilter chunkFilter
 					<Item Name="xsimkE178A56B595B48B8AB91732B5607448B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_0_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkE178A56B595B48B8AB91732B5607448B.dll"/>
 					<Item Name="xsimkF67550615A83448EBC6C389460CAD7F5.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_32_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkF67550615A83448EBC6C389460CAD7F5.dll"/>
 					<Item Name="xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_64_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll"/>
+					<Item Name="xsimk23716DA1DC674904AB03DD0C571F3216.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk23716DA1DC674904AB03DD0C571F3216.dll"/>
+					<Item Name="xsimk261F22AD87914D74815220AEC1083408.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimk261F22AD87914D74815220AEC1083408.dll"/>
+					<Item Name="xsimk076450293B6D47BC8F2F94ABAE10A55B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk076450293B6D47BC8F2F94ABAE10A55B.dll"/>
+					<Item Name="xsimk943F27150BF740A48C379247F37BB275.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk943F27150BF740A48C379247F37BB275.dll"/>
+					<Item Name="xsimkF35A88E02AA440E4AED59715AE28C165.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimkF35A88E02AA440E4AED59715AE28C165.dll"/>
+					<Item Name="xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="CrioLinux" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -1963,19 +1969,19 @@ AddOutputFilter chunkFilter
 						<Property Name="Bld_buildSpecName" Type="Str">fpga-lib</Property>
 						<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
 						<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
-						<Property Name="Bld_excludedDirectory[1]" Type="Path">instr.lib</Property>
+						<Property Name="Bld_excludedDirectory[1]" Type="Path">resource/objmgr</Property>
 						<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
-						<Property Name="Bld_excludedDirectory[2]" Type="Path">user.lib</Property>
-						<Property Name="Bld_excludedDirectory[2].pathType" Type="Str">relativeToAppDir</Property>
-						<Property Name="Bld_excludedDirectory[3]" Type="Path">resource/objmgr</Property>
-						<Property Name="Bld_excludedDirectory[3].pathType" Type="Str">relativeToAppDir</Property>
-						<Property Name="Bld_excludedDirectory[4]" Type="Path">/C/ProgramData/National Instruments/InstCache/18.0</Property>
-						<Property Name="Bld_excludedDirectory[5]" Type="Path">/C/Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+						<Property Name="Bld_excludedDirectory[2]" Type="Path">/C/ProgramData/National Instruments/InstCache/18.0</Property>
+						<Property Name="Bld_excludedDirectory[3]" Type="Path">/C/Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+						<Property Name="Bld_excludedDirectory[4]" Type="Path">instr.lib</Property>
+						<Property Name="Bld_excludedDirectory[4].pathType" Type="Str">relativeToAppDir</Property>
+						<Property Name="Bld_excludedDirectory[5]" Type="Path">user.lib</Property>
+						<Property Name="Bld_excludedDirectory[5].pathType" Type="Str">relativeToAppDir</Property>
 						<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
 						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
 						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 						<Property Name="Bld_previewCacheID" Type="Str">{1665D5AC-C968-4E68-9369-68DA0AAD53CC}</Property>
-						<Property Name="Bld_version.build" Type="Int">11</Property>
+						<Property Name="Bld_version.build" Type="Int">13</Property>
 						<Property Name="Bld_version.major" Type="Int">1</Property>
 						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
@@ -1985,7 +1991,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Destination[1].path" Type="Path">../llbs/NI_AB_TARGETNAME</Property>
 						<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 						<Property Name="DestinationCount" Type="Int">2</Property>
-						<Property Name="Source[0].itemID" Type="Str">{6965CDA3-23FB-4068-8F41-34F5D7F50C38}</Property>
+						<Property Name="Source[0].itemID" Type="Str">{FD9EEA99-251D-44F8-ACAD-A1C458BF4185}</Property>
 						<Property Name="Source[0].type" Type="Str">Container</Property>
 						<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 						<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib</Property>
@@ -2132,6 +2138,12 @@ AddOutputFilter chunkFilter
 			<Item Name="xsimkE178A56B595B48B8AB91732B5607448B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_0_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkE178A56B595B48B8AB91732B5607448B.dll"/>
 			<Item Name="xsimkF67550615A83448EBC6C389460CAD7F5.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_32_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkF67550615A83448EBC6C389460CAD7F5.dll"/>
 			<Item Name="xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_64_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll"/>
+			<Item Name="xsimk23716DA1DC674904AB03DD0C571F3216.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk23716DA1DC674904AB03DD0C571F3216.dll"/>
+			<Item Name="xsimk261F22AD87914D74815220AEC1083408.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimk261F22AD87914D74815220AEC1083408.dll"/>
+			<Item Name="xsimk076450293B6D47BC8F2F94ABAE10A55B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk076450293B6D47BC8F2F94ABAE10A55B.dll"/>
+			<Item Name="xsimk943F27150BF740A48C379247F37BB275.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk943F27150BF740A48C379247F37BB275.dll"/>
+			<Item Name="xsimkF35A88E02AA440E4AED59715AE28C165.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimkF35A88E02AA440E4AED59715AE28C165.dll"/>
+			<Item Name="xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="rt-lib" Type="Source Distribution">

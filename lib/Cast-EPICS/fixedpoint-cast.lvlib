@@ -4,11 +4,20 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">402685952</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="internal" Type="Folder">
+		<Item Name="cast s-64-0 to u64.vi" Type="VI" URL="../cast s-64-0 to u64.vi"/>
+		<Item Name="cast s-64-32 to u64.vi" Type="VI" URL="../cast s-64-32 to u64.vi"/>
+		<Item Name="cast s-64-64 to u64.vi" Type="VI" URL="../cast s-64-64 to u64.vi"/>
+		<Item Name="cast u-64-0 to u64.vi" Type="VI" URL="../cast u-64-0 to u64.vi"/>
+		<Item Name="cast u-64-32 to u64.vi" Type="VI" URL="../cast u-64-32 to u64.vi"/>
+		<Item Name="cast u-64-64 to u64.vi" Type="VI" URL="../cast u-64-64 to u64.vi"/>
+		<Item Name="cast u64 to s-64-0.vi" Type="VI" URL="../cast u64 to s-64-0.vi"/>
+		<Item Name="cast u64 to s-64-32.vi" Type="VI" URL="../cast u64 to s-64-32.vi"/>
+		<Item Name="cast u64 to s-64-64.vi" Type="VI" URL="../cast u64 to s-64-64.vi"/>
+		<Item Name="cast u64 to u-64-0.vi" Type="VI" URL="../cast u64 to u-64-0.vi"/>
+		<Item Name="cast u64 to u-64-32.vi" Type="VI" URL="../cast u64 to u-64-32.vi"/>
+		<Item Name="cast u64 to u-64-64.vi" Type="VI" URL="../cast u64 to u-64-64.vi"/>
+	</Item>
 	<Item Name="cast fixedpoint to U64.vi" Type="VI" URL="../cast fixedpoint to U64.vi"/>
-	<Item Name="cast s-64-0 to u64.vi" Type="VI" URL="../cast s-64-0 to u64.vi"/>
-	<Item Name="cast s-64-32 to u64.vi" Type="VI" URL="../cast s-64-32 to u64.vi"/>
-	<Item Name="cast s-64-64 to u64.vi" Type="VI" URL="../cast s-64-64 to u64.vi"/>
-	<Item Name="cast u-64-0 to u64.vi" Type="VI" URL="../cast u-64-0 to u64.vi"/>
-	<Item Name="cast u-64-32 to u64.vi" Type="VI" URL="../cast u-64-32 to u64.vi"/>
-	<Item Name="cast u-64-64 to u64.vi" Type="VI" URL="../cast u-64-64 to u64.vi"/>
+	<Item Name="cast U64 to fixedpoint.vi" Type="VI" URL="../cast U64 to fixedpoint.vi"/>
 </Library>
