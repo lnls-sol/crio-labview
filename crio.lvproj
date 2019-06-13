@@ -1911,19 +1911,6 @@ AddOutputFilter chunkFilter
 					<Item Name="vi.lib" Type="Folder">
 						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					</Item>
-					<Item Name="xsimkE7343CD01BD446888FE8A1ECD56163F1.dll" Type="Document" URL="../scaler_vhdl/src/Scaler64SimFiles/xsim.dir/scaler_64_lv_wrapper/xsimkE7343CD01BD446888FE8A1ECD56163F1.dll"/>
-					<Item Name="xsimk2315B75A57EC419397B8836629FE989C.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_fxp_s_dash_64_dash_0_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk2315B75A57EC419397B8836629FE989C.dll"/>
-					<Item Name="xsimk6449F698ACB74EA89B6244EDD73F2CE7.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_s_dash_64_dash_32_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk6449F698ACB74EA89B6244EDD73F2CE7.dll"/>
-					<Item Name="xsimk8103A53DF9224D4994B035EF7A8C7BFC.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_s_dash_64_dash_64_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk8103A53DF9224D4994B035EF7A8C7BFC.dll"/>
-					<Item Name="xsimkE178A56B595B48B8AB91732B5607448B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_0_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkE178A56B595B48B8AB91732B5607448B.dll"/>
-					<Item Name="xsimkF67550615A83448EBC6C389460CAD7F5.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_32_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimkF67550615A83448EBC6C389460CAD7F5.dll"/>
-					<Item Name="xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u_dash_64_dash_64_to_u64SimFiles/xsim.dir/fixedpoint_to_u64/xsimk3948EAE62C9749CEA36883D0D40AEC2A.dll"/>
-					<Item Name="xsimkF35A88E02AA440E4AED59715AE28C165.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimkF35A88E02AA440E4AED59715AE28C165.dll"/>
-					<Item Name="xsimk943F27150BF740A48C379247F37BB275.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk943F27150BF740A48C379247F37BB275.dll"/>
-					<Item Name="xsimk076450293B6D47BC8F2F94ABAE10A55B.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk076450293B6D47BC8F2F94ABAE10A55B.dll"/>
-					<Item Name="xsimk261F22AD87914D74815220AEC1083408.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimk261F22AD87914D74815220AEC1083408.dll"/>
-					<Item Name="xsimk23716DA1DC674904AB03DD0C571F3216.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_u_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk23716DA1DC674904AB03DD0C571F3216.dll"/>
-					<Item Name="xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="CrioLinux" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
