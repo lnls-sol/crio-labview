@@ -5,6 +5,7 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="internal" Type="Folder">
+		<Item Name="check upper bound.vi" Type="VI" URL="../check upper bound.vi"/>
 		<Item Name="increment shared memory pointer.vi" Type="VI" URL="../increment shared memory pointer.vi"/>
 		<Item Name="sm bool array read and increment.vi" Type="VI" URL="../sm bool array read and increment.vi"/>
 		<Item Name="sm bool array write and increment.vi" Type="VI" URL="../sm bool array write and increment.vi"/>
@@ -30,6 +31,8 @@
 		<Item Name="sm i64 read array and increment.vi" Type="VI" URL="../sm i64 read array and increment.vi"/>
 		<Item Name="sm i64 write and increment.vi" Type="VI" URL="../sm i64 write and increment.vi"/>
 		<Item Name="sm i64 write array and increment.vi" Type="VI" URL="../sm i64 write array and increment.vi"/>
+		<Item Name="sm mbbi write and increment.vi" Type="VI" URL="../sm mbbi write and increment.vi"/>
+		<Item Name="sm mbbo read and increment.vi" Type="VI" URL="../sm mbbo read and increment.vi"/>
 		<Item Name="sm single array read and increment.vi" Type="VI" URL="../sm single array read and increment.vi"/>
 		<Item Name="sm single array write and increment.vi" Type="VI" URL="../sm single array write and increment.vi"/>
 		<Item Name="sm single read and increment.vi" Type="VI" URL="../sm single read and increment.vi"/>
@@ -50,10 +53,10 @@
 		<Item Name="sm u64 read array and increment.vi" Type="VI" URL="../sm u64 read array and increment.vi"/>
 		<Item Name="sm u64 write and increment.vi" Type="VI" URL="../sm u64 write and increment.vi"/>
 		<Item Name="sm u64 write array and increment.vi" Type="VI" URL="../sm u64 write array and increment.vi"/>
-		<Item Name="upper bound check.vi" Type="VI" URL="../upper bound check.vi"/>
 	</Item>
 	<Item Name="IOC shared memory de-initialize.vi" Type="VI" URL="../IOC shared memory de-initialize.vi"/>
 	<Item Name="IOC shared memory initialize.vi" Type="VI" URL="../IOC shared memory initialize.vi"/>
 	<Item Name="sm read and increment.vi" Type="VI" URL="../sm read and increment.vi"/>
 	<Item Name="sm write and increment.vi" Type="VI" URL="../sm write and increment.vi"/>
+	<Item Name="sm_cluster.ctl" Type="VI" URL="../../../controls/sm_cluster.ctl"/>
 </Library>

@@ -1975,7 +1975,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
 						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 						<Property Name="Bld_previewCacheID" Type="Str">{1665D5AC-C968-4E68-9369-68DA0AAD53CC}</Property>
-						<Property Name="Bld_version.build" Type="Int">15</Property>
+						<Property Name="Bld_version.build" Type="Int">17</Property>
 						<Property Name="Bld_version.major" Type="Int">1</Property>
 						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
@@ -1985,7 +1985,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Destination[1].path" Type="Path">../llbs/NI_AB_TARGETNAME</Property>
 						<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 						<Property Name="DestinationCount" Type="Int">2</Property>
-						<Property Name="Source[0].itemID" Type="Str">{A1D537F1-CD8B-46C8-A486-40052CCFEE9A}</Property>
+						<Property Name="Source[0].itemID" Type="Str">{427334C5-5C21-4AE9-B5FA-88F2F9520723}</Property>
 						<Property Name="Source[0].type" Type="Str">Container</Property>
 						<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 						<Property Name="Source[1].itemID" Type="Ref">/9035/Chassis/FPGA Target/fpga target libs &amp; examples/scaler.lvlib</Property>
@@ -2078,6 +2078,7 @@ AddOutputFilter chunkFilter
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="enum.ctl" Type="VI" URL="../controls/enum.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
@@ -2129,28 +2130,31 @@ AddOutputFilter chunkFilter
 			<Item Name="xsimk943F27150BF740A48C379247F37BB275.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk943F27150BF740A48C379247F37BB275.dll"/>
 			<Item Name="xsimkF35A88E02AA440E4AED59715AE28C165.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimkF35A88E02AA440E4AED59715AE28C165.dll"/>
 			<Item Name="xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll"/>
+			<Item Name="upper bound check.vi" Type="VI" URL="../lib/labviewRT-EPICS/upper bound check.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="rt-lib" Type="Source Distribution">
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{A8398827-8190-42DF-8D26-F2F0AE29F2CB}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">rt-lib</Property>
-				<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
-				<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[1]" Type="Path">instr.lib</Property>
-				<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[2]" Type="Path">user.lib</Property>
-				<Property Name="Bld_excludedDirectory[2].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[3]" Type="Path">resource/objmgr</Property>
-				<Property Name="Bld_excludedDirectory[3].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[4]" Type="Path">/C/ProgramData/National Instruments/InstCache/18.0</Property>
-				<Property Name="Bld_excludedDirectory[5]" Type="Path">/C/Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+				<Property Name="Bld_excludedDirectory[0]" Type="Path">../Program Files (x86)/National Instruments/LabVIEW 2018/vi.lib</Property>
+				<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_excludedDirectory[1]" Type="Path">../Program Files (x86)/National Instruments/LabVIEW 2018/instr.lib</Property>
+				<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_excludedDirectory[2]" Type="Path">../Program Files (x86)/National Instruments/LabVIEW 2018/user.lib</Property>
+				<Property Name="Bld_excludedDirectory[2].pathType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_excludedDirectory[3]" Type="Path">../Program Files (x86)/National Instruments/LabVIEW 2018/resource/objmgr</Property>
+				<Property Name="Bld_excludedDirectory[3].pathType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_excludedDirectory[4]" Type="Path">../ProgramData/National Instruments/InstCache/18.0</Property>
+				<Property Name="Bld_excludedDirectory[4].pathType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_excludedDirectory[5]" Type="Path">../Users/dawood.alnajjar/Documents/LabVIEW Data/2018(32-bit)/ExtraVILib</Property>
+				<Property Name="Bld_excludedDirectory[5].pathType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../llbs/RT CompactRIO Target</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{AFB3FA55-4925-4C5E-A79B-74C1947CFF56}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/rt-lib.llb</Property>
-				<Property Name="Bld_version.build" Type="Int">8</Property>
+				<Property Name="Bld_version.build" Type="Int">11</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">/rt-lib.llb</Property>
@@ -2160,7 +2164,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].path" Type="Path">/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{2A09BCD7-64EA-497F-B195-F81BA5BE6A30}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7431A67B-1789-4A62-B292-7D95FA6CA26F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/9035/lib/labviewRT-EPICS/linuxSharedMemory.lvlib</Property>
@@ -2250,6 +2254,7 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="9045_sm.vi" Type="VI" URL="../examples/9045_sm.vi"/>
 		<Item Name="Chassis" Type="cRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -4219,7 +4224,47 @@ AddOutputFilter chunkFilter
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
+				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
+				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
+				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
+				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
+				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
+				<Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
+				<Item Name="Find Tag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find Tag.vi"/>
+				<Item Name="Format Message String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Format Message String.vi"/>
+				<Item Name="General Error Handler Core CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler Core CORE.vi"/>
+				<Item Name="General Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler.vi"/>
+				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
+				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
+				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
+				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
+				<Item Name="Linux Errno.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI/NI Linux RT Errno/Linux Errno.lvlib"/>
+				<Item Name="Linux RT IPC.C.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI/NI Linux RT IPC/C/Linux RT IPC.C.lvlib"/>
+				<Item Name="Linux RT IPC.Shared Memory.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI/NI Linux RT IPC/Shared Memory/Linux RT IPC.Shared Memory.lvlib"/>
+				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
+				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
+				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
+				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
+				<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
+				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
+				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
+				<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
+				<Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
+				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+			</Item>
+			<Item Name="enum.ctl" Type="VI" URL="../controls/enum.ctl"/>
+			<Item Name="linuxSharedMemory.lvlib" Type="Library" URL="../lib/labviewRT-EPICS/linuxSharedMemory.lvlib"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 </Project>
