@@ -1933,7 +1933,7 @@ AddOutputFilter chunkFilter
 						<Property Name="Bld_localDestDir" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
 						<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 						<Property Name="Bld_previewCacheID" Type="Str">{273BF8EB-DA3B-4E34-B513-0940808EEA92}</Property>
-						<Property Name="Bld_version.build" Type="Int">8</Property>
+						<Property Name="Bld_version.build" Type="Int">10</Property>
 						<Property Name="Bld_version.major" Type="Int">1</Property>
 						<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 						<Property Name="Destination[0].path" Type="Path">../llbs/NI_AB_TARGETNAME/fpga-lib.llb</Property>
@@ -2013,7 +2013,6 @@ AddOutputFilter chunkFilter
 			<Item Name="xsimk943F27150BF740A48C379247F37BB275.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_64SimFiles/xsim.dir/u64_to_fixedpoint/xsimk943F27150BF740A48C379247F37BB275.dll"/>
 			<Item Name="xsimkF35A88E02AA440E4AED59715AE28C165.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_32SimFiles/xsim.dir/u64_to_fixedpoint/xsimkF35A88E02AA440E4AED59715AE28C165.dll"/>
 			<Item Name="xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll" Type="Document" URL="../fixedpoint_vhdl/src/cast_u64_to_s_dash_64_dash_0SimFiles/xsim.dir/u64_to_fixedpoint/xsimk961E59A9DBE9438EA6AC6F36B718F41E.dll"/>
-			<Item Name="upper bound check.vi" Type="VI" URL="../lib/labviewRT-EPICS/upper bound check.vi"/>
 			<Item Name="Coeff Range Check.vi" Type="VI" URL="../../Program Files (x86)/National Instruments/LabVIEW 2018/examples/CompactRIO/Shared/Coeff Range Check.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 		</Item>
@@ -2039,7 +2038,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{1EBC2ECA-9458-464E-88E9-3FED9C388834}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/rt-lib.llb</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">/rt-lib.llb</Property>
