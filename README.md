@@ -1,7 +1,7 @@
-# crio-linux: Parameter reading and writing to/from FPGA/labviewRT by crio-linux-lib
+# Nheengatu Labview : FPGA/labviewRT VI interface to read and write to/from LinuxRT
 
 This project shows examples on how to read/write to and from the FPGA and/or labviewRT
-from LinuxRT.
+from LinuxRT. More information can be obtained  [here](https://github.com/lnls-sol/project-nheengatu/tree/master/docs).
 
 ## Communicating with the FPGA (fpga_all_example.vi)
 
