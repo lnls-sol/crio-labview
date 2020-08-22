@@ -37,6 +37,8 @@
 		<Item Name="sm single array write and increment.vi" Type="VI" URL="../sm single array write and increment.vi"/>
 		<Item Name="sm single read and increment.vi" Type="VI" URL="../sm single read and increment.vi"/>
 		<Item Name="sm single write and increment.vi" Type="VI" URL="../sm single write and increment.vi"/>
+		<Item Name="sm string read and increment.vi" Type="VI" URL="../sm string read and increment.vi"/>
+		<Item Name="sm string write and increment.vi" Type="VI" URL="../sm string write and increment.vi"/>
 		<Item Name="sm u8 read and increment.vi" Type="VI" URL="../sm u8 read and increment.vi"/>
 		<Item Name="sm u8 read array and increment.vi" Type="VI" URL="../sm u8 read array and increment.vi"/>
 		<Item Name="sm u8 write and increment.vi" Type="VI" URL="../sm u8 write and increment.vi"/>
